@@ -87,7 +87,7 @@ Three kinds of event enter one LangGraph `StateGraph`. Every path ends in `log`.
 | `timeout` (no reply) | `timeout → log` |
 
 - `check_policy` can jump straight to `act` when a family rule forbids the content. That is the only immediate block.
-- `gate` stops when drift is below 0.5, an agreed extension is running, or PORTAL has already backed off this sitting.
+- `gate` stops when drift is below 0.5, an agreed extension is running, or NEST has already backed off this sitting.
 - `choose_channel` picks the house when a voice suggestion was declined and the sitting has passed 45 minutes; the house channel does not wait for a breakpoint because it does not pause the video.
 - The model is called only inside `act`, `accept` and `judge`, and only for words.
 
@@ -194,7 +194,7 @@ sequenceDiagram
 | LLM | Gemma via Ollama | Same, with a scripted fallback for every agent | The demo must survive a missing or slow model |
 | Game Forge | Model writes an HTML/JS game | Model writes a validated rules object; fixed engine runs it | No model-written code runs on a child's device, and the rules map directly to blocks |
 | Documentary | ffmpeg render to a file | Rendered live on the TV page | No ffmpeg on the demo laptop |
-| Phone sensing | UsageStats, MediaSession, Accessibility | The PORTAL player page only | Native Android service not built |
+| Phone sensing | UsageStats, MediaSession, Accessibility | The NEST player page only | Native Android service not built |
 
 ## Latency
 

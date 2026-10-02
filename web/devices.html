@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEST · working prototype</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="bar">
+    <a class="logo" href="/nest/">NEST</a>
+    <span class="small muted">working prototype</span>
+    <div class="chips" id="truth"></div>
+  </header>
+  <main class="wrap">
+    <div class="card">
+      <h1>The working prototype, one page per device.</h1>
+      <p class="muted">Open each page on the device it stands for. All of them talk to this hub over your home network. <a href="/nest/">Back to the NEST story</a></p>
+      <p class="small">Phone address: <b id="lan"></b> <span class="muted">(the microphone needs a secure page: see the README for the one-line fix)</span></p>
+    </div>
+    <div class="grid two">
+      <a class="card btn" href="/child.html"><h2>📱 Child phone</h2><p class="muted">Video, companion voice, talking back, quests. Open on the Galaxy phone.</p></a>
+      <a class="card btn" href="/tv.html"><h2>📺 Living room</h2><p class="muted">TV app plus the SmartThings lights and speaker view. Open on the laptop.</p></a>
+      <a class="card btn" href="/parent.html"><h2>🧑‍🤝‍🧑 Parent</h2><p class="muted">Teach rules by voice, read every decision and its reason, demo controls.</p></a>
+      <a class="card btn" href="/forge.html"><h2>🛠️ Game Forge</h2><p class="muted">Say a game, play it, change its rules by voice.</p></a>
+    </div>
+  </main>
+  <script src="/js/common.js"></script>
+  <script>
+    PORTAL.on("status", (s) => { PORTAL.el("lan").textContent = s.lan_url; });
+    PORTAL.connect("parent");
+  </script>
+</body>
+</html>

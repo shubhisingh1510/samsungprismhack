@@ -3,60 +3,61 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PORTAL · Living room</title>
+  <title>NEST · Living room</title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="/css/style.css">
   <style>
     body { overflow: hidden; }
-    .room { position: fixed; inset: 0; display: grid; grid-template-rows: auto 1fr auto; transition: background 1.2s linear;
-      background: radial-gradient(ellipse at 50% 0%, rgb(var(--light) / var(--glow)) 0%, rgb(var(--light) / calc(var(--glow) * 0.35)) 45%, #07060f 100%); }
+    /* The room is flat colour: the wall takes the tint of the lights, the way a real room does. */
+    .room { position: fixed; inset: 0; display: grid; grid-template-rows: auto 1fr auto; transition: background-color 1.2s linear;
+      background-color: color-mix(in srgb, rgb(var(--light)) calc(var(--glow) * 26%), #e6dfd4); }
     .ceiling { display: flex; justify-content: space-around; padding: 0 12%; }
-    .lamp { width: 70px; height: 26px; border-radius: 0 0 40px 40px; background: rgb(var(--light)); opacity: calc(0.25 + var(--glow));
-      box-shadow: 0 0 calc(90px * var(--glow)) calc(34px * var(--glow)) rgb(var(--light) / 0.8); transition: all 1.2s linear; }
+    .lamp { width: 70px; height: 26px; border-radius: 0 0 40px 40px; background: rgb(var(--light)); border: 1.5px solid #292724; border-top: 0;
+      opacity: calc(0.45 + var(--glow)); transition: all 1.2s linear; }
     .middle { display: grid; place-items: center; padding: 2vh 4vw; min-height: 0; }
-    .tv { width: min(92vw, 150vh); aspect-ratio: 16 / 9; max-height: 100%; background: #05040c; border: 10px solid #15131f;
-      border-radius: 18px; box-shadow: 0 30px 80px #000a; position: relative; overflow: hidden; }
+    .tv { width: min(92vw, 150vh); aspect-ratio: 16 / 9; max-height: 100%; background: #34312d; border: 10px solid #292724;
+      border-radius: 14px; position: relative; overflow: hidden; color: #fff9f2; }
     .screen { position: absolute; inset: 0; display: none; place-items: center; text-align: center; padding: 4%; }
     .screen.on { display: grid; }
-    .screen h1 { font-size: clamp(1.4rem, 4.6vw, 3.6rem); }
-    .screen p { font-size: clamp(0.95rem, 2vw, 1.6rem); }
-    #idle { color: #6f6a94; }
-    #idle .clock { font-size: clamp(2rem, 9vw, 7rem); font-weight: 200; font-variant-numeric: tabular-nums; }
-    #portal { background: #05040c; }
-    .swirl { position: absolute; width: 150%; aspect-ratio: 1; border-radius: 50%; left: -25%; top: 50%; translate: 0 -50%;
-      background: conic-gradient(from 0deg, #8b5cf6, #22d3ee, #f472b6, #fbbf24, #8b5cf6); filter: blur(46px); opacity: 0.75;
-      animation: spin 9s linear infinite; }
-    .swirl.b { width: 90%; left: 5%; animation-duration: 5s; animation-direction: reverse; opacity: 0.6; }
-    .hole { position: absolute; width: 34%; aspect-ratio: 1; border-radius: 50%; left: 33%; top: 50%; translate: 0 -50%;
-      background: radial-gradient(circle, #000 55%, transparent 72%); }
-    @keyframes spin { to { rotate: 360deg; } }
-    .front { position: relative; z-index: 2; text-shadow: 0 3px 18px #000; max-width: 80%; }
+    .screen h1 { font-size: clamp(1.6rem, 5.4vw, 4.6rem); }
+    .screen p { font-size: clamp(0.95rem, 1.9vw, 1.5rem); }
+    #idle { color: #a59f96; }
+    #idle .clock { font-family: var(--serif); font-size: clamp(2rem, 9vw, 7rem); font-variant-numeric: tabular-nums; }
+    /* the portal is the NEST doorway: one arch of light, nothing spinning */
+    #portal { background: #292724; }
+    .hole { position: absolute; left: 50%; bottom: 0; width: 30%; height: 82%; translate: -50% 0; background: var(--butter);
+      border-radius: 999px 999px 0 0; opacity: 0.22; animation: breathe 7s ease-in-out infinite; transform-origin: 50% 100%; }
+    .swirl { display: none; }
+    @keyframes breathe { 50% { scale: 1.03; opacity: 0.3; } }
+    .front { position: relative; z-index: 2; max-width: 80%; }
+    #quest { background: var(--butter); color: var(--text); }
     #quest ol { text-align: left; font-size: clamp(0.9rem, 1.9vw, 1.5rem); display: inline-block; }
-    #quest { background: linear-gradient(160deg, #241a55, #0d0b1e); }
-    #winddown { background: linear-gradient(#1a1030, #05040c); color: #c9b8ff; }
+    #winddown { background: var(--lavender); color: var(--text); }
     #film { background: #000; padding: 0; }
     #film .photo { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s; }
     #film .photo.show { opacity: 1; animation: kenburns 9s ease-out forwards; }
-    @keyframes kenburns { from { scale: 1; } to { scale: 1.16; translate: -2% -2%; } }
-    #film .shade { position: absolute; inset: 0; background: linear-gradient(transparent 45%, #000d); }
+    @keyframes kenburns { from { scale: 1; } to { scale: 1.12; translate: -1.5% -1.5%; } }
+    #film .shade { position: absolute; inset: 0; background: linear-gradient(transparent 50%, #000c); }
     #film .caption { position: absolute; left: 5%; right: 5%; bottom: 7%; text-align: left; z-index: 2; }
-    #film .caption b { display: block; font-size: clamp(1.2rem, 3.6vw, 3rem); }
-    #film .caption span { font-size: clamp(0.85rem, 1.8vw, 1.4rem); color: #ddd; }
+    #film .caption b { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 4vw, 3.4rem); }
+    #film .caption span { font-size: clamp(0.85rem, 1.8vw, 1.4rem); font-style: italic; color: #e9e2d8; }
     #film .card-title { position: absolute; inset: 0; display: grid; place-items: center; z-index: 3; background: #000; padding: 6%; }
+    #film .card-title .label { color: #cfc8be; }
     #film .bigemoji { position: absolute; inset: 0; display: grid; place-items: center; font-size: 22vh; opacity: 0; transition: opacity 1s; }
     #film .bigemoji.show { opacity: 1; }
     .floor { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; padding: 10px 16px; }
-    .speaker { font-size: 0.85rem; color: var(--muted); background: #0009; padding: 6px 12px; border-radius: 999px; }
-    .speaker.playing { color: var(--good); }
-    .simpanel { background: #0d0b1ee6; border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px; font-size: 0.82rem; max-width: 430px; }
-    .simpanel input[type=range] { width: 130px; vertical-align: middle; }
-    .topbar { display: flex; align-items: center; gap: 10px; padding: 8px 14px; }
+    .speaker { font-size: 0.85rem; color: var(--muted); background: var(--panel); border: 1px solid var(--line); padding: 6px 12px; border-radius: 999px; }
+    .speaker.playing { color: var(--text); border-color: var(--text); }
+    .simpanel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; font-size: 0.82rem; max-width: 460px; }
+    .simpanel input[type=range] { width: 130px; vertical-align: middle; accent-color: #292724; }
+    .simpanel button { padding: 5px 12px; font-size: 0.82rem; }
+    .topbar { display: flex; align-items: center; gap: 10px; padding: 10px 16px; }
   </style>
 </head>
 <body>
   <div class="overlay" id="start">
     <div>
-      <h1 class="logo">PORTAL</h1>
+      <h1 class="logo">NEST</h1>
       <p class="muted">Living room: TV and SmartThings view</p>
       <p><button class="primary big" id="startBtn">Turn on the TV</button></p>
       <p class="small muted">Put this window on the laptop or a big screen.</p>
@@ -65,7 +66,7 @@
 
   <div class="room" id="room" style="--light: 255 244 229; --glow: 0.3">
     <div>
-      <div class="topbar"><a class="logo" href="/">PORTAL</a><span class="small muted">Living room</span><div class="chips" id="truth"></div></div>
+      <div class="topbar"><a class="logo" href="/nest/">NEST</a><span class="small muted">Living room</span><div class="chips" id="truth"></div></div>
       <div class="ceiling"><div class="lamp"></div><div class="lamp"></div><div class="lamp"></div></div>
     </div>
     <div class="middle">

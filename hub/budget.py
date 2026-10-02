@@ -1,4 +1,4 @@
-"""Annoyance budget and reward cap: the two limits PORTAL puts on itself."""
+"""Annoyance budget and reward cap: the two limits NEST puts on itself."""
 from __future__ import annotations
 
 from dataclasses import dataclass, field
@@ -8,7 +8,7 @@ from . import config
 
 @dataclass
 class AnnoyanceBudget:
-    """How often PORTAL may interrupt this child. The gap between interruptions is
+    """How often NEST may interrupt this child. The gap between interruptions is
     learned: it shrinks a little when the child says yes and grows when they say no."""
     gap_min: float = config.BUDGET_GAP_MIN
     max_per_hour: int = config.BUDGET_MAX_PER_HOUR

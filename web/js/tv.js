@@ -146,7 +146,7 @@
     el("filmCaption").textContent = "";
     el("filmNarration").textContent = "";
     ["photoA", "photoB", "filmEmoji"].forEach((id) => el(id).classList.remove("show"));
-    el("filmKicker").textContent = "PORTAL Creator Studio presents";
+    el("filmKicker").textContent = "NEST Films presents";
     el("filmTitle").textContent = m.film.title;
     el("filmCard").hidden = false;
     await wait(3200);

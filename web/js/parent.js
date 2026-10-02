@@ -107,7 +107,7 @@
       make("span", { className: "muted small", textContent: `${time} · ${d.channel}${d.by ? ` · ${d.by}` : ""}${d.outcome ? ` · ${d.outcome}` : ""}` }));
     node.append(head, make("div", { textContent: d.reason }));
     if (d.child_said) node.append(make("div", { className: "muted", textContent: `Child: "${d.child_said}"` }));
-    if (d.line) node.append(make("div", { className: "line", textContent: `PORTAL: "${d.line}"` }));
+    if (d.line) node.append(make("div", { className: "line", textContent: `NEST: "${d.line}"` }));
     if (d.false_interrupt) node.append(make("div", { className: "small", style: "color:var(--bad)", textContent: "Child flagged this as bad timing." }));
     return node;
   }
@@ -115,7 +115,7 @@
   async function loadLog() {
     const decisions = await api("/api/log");
     el("log").replaceChildren(...decisions.reverse().map(entry));
-    if (!decisions.length) el("log").append(make("p", { className: "muted small", textContent: "Nothing yet. PORTAL logs every action and every time it holds back." }));
+    if (!decisions.length) el("log").append(make("p", { className: "muted small", textContent: "Nothing yet. NEST logs every action and every time it holds back." }));
   }
   on("log/decision", loadLog);
 

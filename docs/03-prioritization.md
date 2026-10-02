@@ -1,6 +1,6 @@
 # Deliverable 3: Build, fake, or show as vision
 
-The rule for a 48-hour build: **one loop that really works beats ten features that half work.** PORTAL's loop is *sense drift → wait for a breakpoint → interrupt → listen → act → log*. Everything built for real serves that loop. Everything else is either a labelled stand-in or a slide.
+The rule for a 48-hour build: **one loop that really works beats ten features that half work.** NEST's loop is *sense drift → wait for a breakpoint → interrupt → listen → act → log*. Everything built for real serves that loop. Everything else is either a labelled stand-in or a slide.
 
 ## Built for real (in this repo, tested)
 

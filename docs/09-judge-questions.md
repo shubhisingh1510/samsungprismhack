@@ -6,15 +6,15 @@ Each answer is written to be said in under 30 seconds. Where the honest answer i
 
 **1. Isn't this just manipulation with a friendly face? You're nudging children.**
 
-It is persuasion, and we constrain it the way you'd want. PORTAL may only suggest at a natural pause, at most three times an hour, and it must back off after two refusals. The child can always ask why and gets the logged reason. Rewards are capped and fade, with no streaks. The thing being competed against is an infinite feed optimised to hold attention with no such limits.
+It is persuasion, and we constrain it the way you'd want. NEST may only suggest at a natural pause, at most three times an hour, and it must back off after two refusals. The child can always ask why and gets the logged reason. Rewards are capped and fade, with no streaks. The thing being competed against is an infinite feed optimised to hold attention with no such limits.
 
-**2. Won't PORTAL become the new addiction?**
+**2. Won't NEST become the new addiction?**
 
-That is the risk we designed against first. Sparks are capped at 20 a day, each quest in a day is worth less than the last, and unspent sparks decay. The annoyance budget shrinks PORTAL's presence for a child who declines. We also track total device time as a guardrail: if it rises, PORTAL is failing.
+That is the risk we designed against first. Sparks are capped at 20 a day, each quest in a day is worth less than the last, and unspent sparks decay. The annoyance budget shrinks NEST's presence for a child who declines. We also track total device time as a guardrail: if it rises, NEST is failing.
 
 **3. Kids will just say "no" every time. Then what?**
 
-Then PORTAL gets quieter, by design. In our simulated cohort the gap between interruptions grew from 10 minutes to about 25 for children who mostly declined. After two refusals it backs off; after an unanswered house scene it stops for that sitting and leaves a note for the parent. We'd rather be ignored than hated. A parent who wants a hard limit sets a rule, and rules are not negotiable.
+Then NEST gets quieter, by design. In our simulated cohort the gap between interruptions grew from 10 minutes to about 25 for children who mostly declined. After two refusals it backs off; after an unanswered house scene it stops for that sitting and leaves a note for the parent. We'd rather be ignored than hated. A parent who wants a hard limit sets a rule, and rules are not negotiable.
 
 **4. A clever child will argue their way to unlimited time.**
 
@@ -28,7 +28,7 @@ We don't have it yet, and we won't pretend otherwise. What we have is a design b
 
 **6. India's DPDP Act restricts behavioural monitoring of children. Isn't that exactly what you do?**
 
-This is our biggest legal question and it needs counsel before launch. Our design position: the Act targets data fiduciaries tracking children. PORTAL keeps behavioural data on the family's own devices, under verifiable parental consent, and Samsung's servers never receive it. Whether that fully satisfies the Act and its rules is a legal determination we have not obtained.
+This is our biggest legal question and it needs counsel before launch. Our design position: the Act targets data fiduciaries tracking children. NEST keeps behavioural data on the family's own devices, under verifiable parental consent, and Samsung's servers never receive it. Whether that fully satisfies the Act and its rules is a legal determination we have not obtained.
 
 **7. You said "nothing leaves the home", but your demo used cloud speech recognition.**
 
@@ -54,7 +54,7 @@ In the demo we don't: Living Video runs in our own player, where we have the cap
 
 **12. How do you find a "natural breakpoint"? What if there are no captions?**
 
-From captions we score three signals: a pause of a second or more, a sentence ending, and the next line starting a new part ("now", "next", "ab", "toh") or changing topic. Our tests check that no breakpoint cuts into a caption line. With no captions, PORTAL waits for the video to end or for the child to pause. It does not guess.
+From captions we score three signals: a pause of a second or more, a sentence ending, and the next line starting a new part ("now", "next", "ab", "toh") or changing topic. Our tests check that no breakpoint cuts into a caption line. With no captions, NEST waits for the video to end or for the child to pause. It does not guess.
 
 **13. LLMs hallucinate. What if it tells a child to do something dangerous?**
 
@@ -68,7 +68,7 @@ A deliberate trade. The agent writes a rules object, validated against a schema 
 
 **15. Google and Apple could copy this in a quarter. Why Samsung, why you?**
 
-They could copy the phone part. Neither can easily make the house react. PORTAL's second act needs the phone, the TV, the lights, the speaker and the watch under one platform, and in an Indian home that platform is far more likely to be Samsung and SmartThings than anyone else's. Google also has a harder story to tell, because YouTube's revenue depends on the watch time PORTAL interrupts. Samsung sells the devices, not the attention.
+They could copy the phone part. Neither can easily make the house react. NEST's second act needs the phone, the TV, the lights, the speaker and the watch under one platform, and in an Indian home that platform is far more likely to be Samsung and SmartThings than anyone else's. Google also has a harder story to tell, because YouTube's revenue depends on the watch time NEST interrupts. Samsung sells the devices, not the attention.
 
 ## Two to have ready
 

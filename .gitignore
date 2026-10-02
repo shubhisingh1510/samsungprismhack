@@ -4,3 +4,4 @@ __pycache__/
 data/runtime/
 data/videos/yt_*.json
 eval/results/
+site/node_modules/

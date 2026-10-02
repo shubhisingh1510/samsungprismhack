@@ -50,7 +50,7 @@ MAX_EXTENSION_MIN = _i("PORTAL_MAX_EXTENSION_MIN", 10)
 VOICE_REPLY_TIMEOUT_S = _f("PORTAL_VOICE_REPLY_TIMEOUT_S", 25)   # real seconds
 HOUSE_REPLY_TIMEOUT_S = _f("PORTAL_HOUSE_REPLY_TIMEOUT_S", 60)   # real seconds
 
-# --- Rewards: capped and decaying so PORTAL never becomes the new habit loop ---
+# --- Rewards: capped and decaying so NEST never becomes the new habit loop ---
 REWARD_BASE = 10
 REWARD_DAILY_CAP = 20
 REWARD_DECAY_PER_DAY = 0.10

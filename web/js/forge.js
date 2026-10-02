@@ -10,7 +10,7 @@
   const escapeHtml = (t) => t.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
   // A complete, standalone game page. The CSP forbids every network request, and the
-  // iframe sandbox gives it an opaque origin, so the game cannot reach PORTAL or the web.
+  // iframe sandbox gives it an opaque origin, so the game cannot reach NEST or the web.
   function gamePage(r) {
     const data = JSON.stringify(r).replace(/</g, "\\u003c");
     return `<!doctype html><html><head><meta charset="utf-8">

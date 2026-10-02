@@ -1,4 +1,4 @@
-"""Tests for the parts of PORTAL that must be right: policy, the rule compiler,
+"""Tests for the parts of NEST that must be right: policy, the rule compiler,
 the Brain's decision paths, and the Game Forge validation loop.
 
 All of these run without a local model, so they exercise the scripted paths plus (via a
@@ -473,7 +473,7 @@ def test_budget_holds_back_and_logs_once():
         cmd = bus.last("player/cmd", cmd="interrupt")
         await brain.on_interrupted({"decision_id": cmd["decision_id"]})
         await brain.on_utterance({"text": "no"})
-        await brain.on_utterance({"text": "no"})          # declined twice: PORTAL backs off
+        await brain.on_utterance({"text": "no"})          # declined twice: NEST backs off
         assert brain.s.phase == "watching" and store.decisions[-1]["outcome"] == "back_off"
         brain.s.interactions.clear()      # talking counts as engagement; set that aside to isolate the budget
         for i in range(5):

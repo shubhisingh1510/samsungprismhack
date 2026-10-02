@@ -25,7 +25,7 @@ A working prototype: the Intervention Brain, living video with barge-in, quests,
 
 **Goal:** find out whether it helps, and whether children can stand it.
 
-- 20–30 families with a child aged 8–12, recruited through two schools. Design as in `06-evaluation.md`: two weeks baseline, four weeks PORTAL, two weeks off.
+- 20–30 families with a child aged 8–12, recruited through two schools. Design as in `06-evaluation.md`: two weeks baseline, four weeks NEST, two weeks off.
 - A child psychologist on the team, and institutional ethics review, before any child is enrolled.
 - Legal review of the DPDP position: consent flow, on-device processing, what counts as behavioural monitoring.
 - Hindi, Tamil, Bengali, Marathi and Telugu for parent rules and the companion's voice.
@@ -48,7 +48,7 @@ If these miss, the right move is to change the design, not the thresholds.
 
 **Goal:** ship inside products families already have, not as another app to install.
 
-| Home for PORTAL | What it becomes |
+| Home for NEST | What it becomes |
 |---|---|
 | **Samsung Kids** | "Portal mode": the companion, quests and Game Forge for ages 4–12 |
 | **Digital Wellbeing / parental controls** | Voice rules and the decision log, next to the existing timers |
@@ -89,4 +89,4 @@ Engineering for this phase:
 2. Buy two SmartThings-compatible bulbs and run the house scenes for real.
 3. Write the Android service (two days of Kotlin) so drift works over any app.
 4. Recruit one child psychologist as an adviser.
-5. Run PORTAL with three families you know for a week and read every line of the decision logs.
+5. Run NEST with three families you know for a week and read every line of the decision logs.

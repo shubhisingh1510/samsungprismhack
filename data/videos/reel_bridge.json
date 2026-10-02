@@ -1,0 +1,24 @@
+{
+  "id": "reel_bridge",
+  "title": "How to Build a Cardboard Bridge",
+  "channel": "Little Engineers (sample reel)",
+  "source": "reel",
+  "category": "educational",
+  "topics": ["bridges", "building"],
+  "palette": ["#C4826A", "#E6CF7A"],
+  "segments": [
+    {"start": 0.0, "dur": 3.6, "emoji": "🌉", "text": "Today we are building a bridge out of nothing but cardboard."},
+    {"start": 3.8, "dur": 4.0, "emoji": "⚖️", "text": "A real bridge works by spreading weight out to both ends."},
+    {"start": 8.0, "dur": 3.8, "emoji": "📚", "text": "So start with two stacks of books, the same height."},
+    {"start": 13.4, "dur": 4.0, "emoji": "📏", "text": "Now lay one flat strip of cardboard across the gap."},
+    {"start": 17.6, "dur": 4.0, "emoji": "👇", "text": "Press the middle of the bridge. It bends straight away."},
+    {"start": 21.8, "dur": 4.0, "emoji": "😬", "text": "A flat bridge is weak, because nothing is holding it up."},
+    {"start": 27.2, "dur": 4.0, "emoji": "🪭", "text": "Next, fold the strip into a zigzag, like a paper fan."},
+    {"start": 31.4, "dur": 4.2, "emoji": "🧱", "text": "The folds turn one weak sheet into lots of small walls."},
+    {"start": 35.8, "dur": 4.0, "emoji": "📕", "text": "Lay the bridge across again and put a book on top."},
+    {"start": 41.2, "dur": 3.8, "emoji": "🔢", "text": "Okay, keep adding books and count how many the bridge holds."},
+    {"start": 45.2, "dur": 4.0, "emoji": "💪", "text": "A good folded bridge can carry ten books or more."},
+    {"start": 50.6, "dur": 4.0, "emoji": "🌈", "text": "Finally, try an arch bridge, and see which shape wins."},
+    {"start": 56.0, "dur": 3.6, "emoji": "🤔", "text": "So what would your bridge look like?"}
+  ]
+}

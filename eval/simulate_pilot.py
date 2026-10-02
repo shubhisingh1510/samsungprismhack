@@ -1,11 +1,11 @@
 """Mock pilot study: a SYNTHETIC cohort run through the real Intervention Brain.
 
 What this is: 24 simulated children over 14 days. Their viewing plans and their
-responses to PORTAL (accept, argue, ignore, flag bad timing) are drawn from the assumed
-probabilities in PERSONA below. Everything PORTAL does in response is the real code:
+responses to NEST (accept, argue, ignore, flag bad timing) are drawn from the assumed
+probabilities in PERSONA below. Everything NEST does in response is the real code:
 drift scoring, breakpoints, the annoyance budget, escalation, the judge, quests, rewards.
 
-What this is not: evidence that PORTAL works on real children. The acceptance rates are
+What this is not: evidence that NEST works on real children. The acceptance rates are
 inputs, not findings. The study shows that the pipeline produces the metrics, how the
 budget and escalation behave over two weeks, and what a real pilot would measure.
 

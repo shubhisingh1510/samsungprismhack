@@ -43,7 +43,7 @@ def singular(word: str) -> str:
 
 def main_thing(text: str, fallback: str = "that", title: str = "") -> str:
     """The thing the video is about, used to make scripted lines refer to it. Title words
-    win, preferring ones PORTAL knows how to build a challenge around and then the ones
+    win, preferring ones NEST knows how to build a challenge around and then the ones
     the transcript mentions most; with no usable title word, the transcript's top word."""
     counts = Counter(singular(t) for t in tokens(text) if t not in STOPWORDS)
     in_title = [w for w in dict.fromkeys(singular(t) for t in tokens(title)) if w not in STOPWORDS]

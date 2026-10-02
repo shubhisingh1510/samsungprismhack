@@ -1,4 +1,4 @@
-// PORTAL game engine. Runs one rules object (written by the Game Forge agent) inside a
+// NEST game engine. Runs one rules object (written by the Game Forge agent) inside a
 // sandboxed iframe: no network, no storage, no access to the page that hosts it.
 function portalGame(rules) {
   const canvas = document.getElementById("c");

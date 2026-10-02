@@ -13,7 +13,7 @@ You will receive a JSON object with:
 Decide one of three verdicts:
 - "grant": the child gave a specific reason or a bounded ask. Give the minutes they asked for, or enough to finish the video if that is short, never more than `max_minutes`.
 - "counter": the reply is vague, a flat no, or asks for more than `max_minutes`. Offer a smaller concrete deal. Only allowed in round 1.
-- "back_off": in round 2 if they still say no, or any time the child sounds upset. Let them carry on without comment on their choice. PORTAL's own suggestions are never forced; only family rules are, and those are handled elsewhere.
+- "back_off": in round 2 if they still say no, or any time the child sounds upset. Let them carry on without comment on their choice. NEST's own suggestions are never forced; only family rules are, and those are handled elsewhere.
 
 If `max_minutes` is 0 you cannot grant. Say honestly that today's extra turns are used up, and offer the challenge or back off.
 

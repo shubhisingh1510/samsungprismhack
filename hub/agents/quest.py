@@ -11,8 +11,8 @@ SCRIPTED = {
     "build": {
         "title": "Operation Cardboard {Thing}",
         "mission": "Build a working {thing} out of cardboard and tape in 10 minutes.",
-        "steps": ["Find cardboard or stiff paper, tape and something to use as a hinge or handle.",
-                  "Build the {thing} so that one part really moves.",
+        "steps": ["Find cardboard or stiff paper, tape and anything else you think you need.",
+                  "Build the {thing} so that it really does its job.",
                   "Test it three times, then take a photo of it working."],
         "materials": ["cardboard", "tape", "string"], "minutes": 10, "proof": "photo", "topic": "mechanisms"},
     "space": {

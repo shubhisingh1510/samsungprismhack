@@ -1,4 +1,6 @@
-# PORTAL: Escape the Screen
+# NEST
+
+**small moments. bigger worlds.**
 
 An agent system for the Samsung home that turns passive screen time into things a child does in the real world. It never blocks on its own initiative. It waits for a natural pause in the video, dares the child to try what they just watched, listens when they argue, and lets the house (lights, speaker, TV) join in.
 
@@ -11,7 +13,7 @@ cd C:\Users\MAYANK\portal
 .\.venv\Scripts\python.exe -m uvicorn hub.main:app --host 0.0.0.0 --port 8000
 ```
 
-Open http://localhost:8000 on the laptop. It links to the four pages:
+Open http://localhost:8000 on the laptop. That is the NEST story: a long-form product site with a demo mode ("Enter NEST") that drives this hub live. The working prototype, one page per device, is at http://localhost:8000/devices.html:
 
 | Page | Stands for | Open it on |
 |---|---|---|
@@ -19,6 +21,19 @@ Open http://localhost:8000 on the laptop. It links to the four pages:
 | `/tv.html` | Galaxy TV app, SmartThings lights and speaker, Galaxy Watch | the laptop, full screen |
 | `/parent.html` | The parent's phone, plus demo controls | the laptop, second window |
 | `/forge.html` | Voice-to-Game Forge | either |
+
+### The NEST site
+
+The site in `site/` (React, TypeScript, Vite, Tailwind, Motion) is already built into `web/nest/`, so the hub serves it with no Node step. To change it:
+
+```powershell
+cd site
+npm install
+npm run dev      # http://localhost:5173/nest/ with live reload; /api and /ws are proxied to the hub
+npm run build    # writes web/nest/
+```
+
+Logo files and a brand sheet are in `site/public/brand/` (served at `/nest/brand/`). Design notes: `docs/11-nest-design.md`.
 
 First-time setup on a new machine: `python -m venv .venv`, then `.venv\Scripts\pip install -r requirements.txt`.
 
@@ -60,7 +75,7 @@ Every page shows this live in its status chips. In full:
 | Intervention Brain (LangGraph), drift score, breakpoints, annoyance budget, escalation, decision log | Real, tested |
 | Policy engine and rule read-back | Real, tested. Deterministic code, no AI |
 | Rule compiler | Real. Keyword parser handles English, Hinglish and common Hindi; other languages need the local model |
-| Pausing the video at a breakpoint, companion voice, talking back | Real in the PORTAL player. Voice out is on-device browser TTS |
+| Pausing the video at a breakpoint, companion voice, talking back | Real in the NEST player. Voice out is on-device browser TTS |
 | Speech-to-text | **Stand-in.** Chrome's Web Speech API, which sends audio to Google. The product design is on-device ASR |
 | Live RAG over the transcript | Real, with a small hashed-vector index rather than a neural embedding model |
 | Sample videos | **Synthetic.** Caption reels written for the demo. Real YouTube videos also work if they have captions |
@@ -98,7 +113,8 @@ hub/
   store.py          JSON files a parent could open
   agents/           living_video, quest, judge, parent_voice, game_forge, creator, house
   prompts/          one system prompt per agent
-web/                child, tv, parent, forge pages; js/engine.js is the game engine
+web/                child, tv, parent, forge pages; js/engine.js is the game engine; nest/ is the built site
+site/               source of the NEST site and its demo mode
 data/videos/        sample reels and cached YouTube captions
 data/runtime/       rules.json, decisions.jsonl, quests.json, profile.json
 eval/               synthetic pilot study
@@ -111,4 +127,4 @@ docs/               pitch, architecture, plan, prompts, metrics, demo script, de
 
 On every tick from the phone: `score_drift → check_policy → gate → check_budget → choose_channel → find_breakpoint → act → log`.
 
-A family rule that forbids the current content acts at once and cannot be argued with. Everything else is PORTAL's own suggestion: it waits for a breakpoint, spends from the annoyance budget, can be argued with, and backs off after two refusals.
+A family rule that forbids the current content acts at once and cannot be argued with. Everything else is NEST's own suggestion: it waits for a breakpoint, spends from the annoyance budget, can be argued with, and backs off after two refusals.

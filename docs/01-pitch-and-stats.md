@@ -4,13 +4,13 @@
 
 > Every parental-control app does one thing: it says **no**. And every child does one thing back: they find a way around it.
 >
-> PORTAL never says no. It's an agent swarm living across the Samsung home. When a child drifts into passive scrolling, the video itself turns around and dares them: *"Bet you can't build that in real life."* The lights shift to sunrise. The TV opens a quest. An hour later, they're watching a documentary starring **themselves**.
+> NEST never says no. It's an agent swarm living across the Samsung home. When a child drifts into passive scrolling, the video itself turns around and dares them: *"Bet you can't build that in real life."* The lights shift to sunrise. The TV opens a quest. An hour later, they're watching a documentary starring **themselves**.
 >
-> Everyone else blocks the screen. PORTAL turns it into a door.
+> Everyone else blocks the screen. NEST turns it into a door.
 
-**10-second version:** "Parental controls restrict. Kids resist. PORTAL recruits: the screen itself dares the child back into the real world, and the whole Samsung home plays along."
+**10-second version:** "Parental controls restrict. Kids resist. NEST recruits: the screen itself dares the child back into the real world, and the whole Samsung home plays along."
 
-Note on "never says no": PORTAL's own suggestions never block. A rule a parent sets is still enforced. If a judge presses, say exactly that.
+Note on "never says no": NEST's own suggestions never block. A rule a parent sets is still enforced. If a judge presses, say exactly that.
 
 ## The problem in India
 

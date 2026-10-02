@@ -465,7 +465,7 @@ class Brain:
         s, p = self.s, self.s.pending
         if p and p["kind"] == "dare" and p.get("counter"):
             return {"decision": await self._grant(p["counter"], f"Deal. {p['counter']} more minutes, then the challenge.",
-                                                  "The child accepted the smaller deal PORTAL offered.")}
+                                                  "The child accepted the smaller deal NEST offered.")}
         if p and p["kind"] == "house":
             quest = self.store.quests[p["quest_id"]]
         else:
@@ -477,6 +477,8 @@ class Brain:
                 self.store.budget.learn("accepted")
         quest.update(status="active", steps_at_start=s.steps)
         self.store.put_quest(quest)
+        if self.house.scene != "sunrise":
+            await self.house.sunrise()      # an adventure has started: the room says so too
         s.phase, s.pending, s.quest_id, s.quest_started = "quest", None, quest["id"], s.clock_min
         line = f"Challenge accepted. {quest['mission']} Your timer starts now."
         await self.bus.emit("player/cmd", {"cmd": "pause"}, roles=("child",))
@@ -527,7 +529,7 @@ class Brain:
     async def _timeout(self, st: BrainState) -> dict:
         p = self.s.pending
         if p["kind"] == "house":
-            reason = (f"No response to the house scene within {config.HOUSE_REPLY_TIMEOUT_S:.0f} s. PORTAL restored the "
+            reason = (f"No response to the house scene within {config.HOUSE_REPLY_TIMEOUT_S:.0f} s. NEST restored the "
                       f"lights and stopped suggesting for this sitting. Worth a conversation later, not a fight now.")
         else:
             reason = f"No answer within {config.VOICE_REPLY_TIMEOUT_S:.0f} s, so the video resumed by itself."
@@ -544,7 +546,7 @@ class Brain:
             s.held_back = "budget"
             entry = self.store.log({"clock_min": round(s.clock_min, 1), "kind": "held_back", "channel": "none",
                                     "outcome": "no action", "drift": s.drift,
-                                    "reason": f"Drift is {s.drift['score']:.2f} but PORTAL held back. Annoyance {st['stop']}."})
+                                    "reason": f"Drift is {s.drift['score']:.2f} but NEST held back. Annoyance {st['stop']}."})
             await self.bus.emit("log/decision", entry, roles=("parent",))
         s.last_stop = st.get("stop")
         return {}

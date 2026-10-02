@@ -4,7 +4,7 @@ The prompts are files in `hub/prompts/`, loaded by the code at run time, so what
 
 ## The design rule behind all of them
 
-**The model writes words; code decides what happens.** No prompt asks a model whether to interrupt, whether a rule applies, or whether a child may have more time beyond a limit. Those are decided by `brain.py` and `policy.py`. This is why three of PORTAL's agents have no prompt at all.
+**The model writes words; code decides what happens.** No prompt asks a model whether to interrupt, whether a rule applies, or whether a child may have more time beyond a limit. Those are decided by `brain.py` and `policy.py`. This is why three of NEST's agents have no prompt at all.
 
 Every prompt follows the same shape:
 

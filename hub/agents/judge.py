@@ -81,7 +81,7 @@ def scripted_judge(ctx: dict) -> dict:
     max_minutes, rnd = int(ctx.get("max_minutes", 0)), int(ctx.get("round", 1))
     if has_any(said, UPSET):
         return {"verdict": "back_off", "minutes": 0, "reply": "Okay. I'll leave you to it.",
-                "reason": "The child sounded upset, so PORTAL backed off.", "by": "scripted"}
+                "reason": "The child sounded upset, so NEST backed off.", "by": "scripted"}
     wanted = asked_minutes(said)
     left = ctx.get("video_seconds_left")
     if has_any(said, SPECIFIC) and left is not None and wanted is None:
@@ -99,11 +99,11 @@ def scripted_judge(ctx: dict) -> dict:
             offer = min(3, max_minutes)
             return {"verdict": "counter", "minutes": offer,
                     "reply": f"How about {offer} more minutes, then we try the challenge. Deal?",
-                    "reason": "The reply gave no specific reason, so PORTAL offered a smaller deal.", "by": "scripted"}
+                    "reason": "The reply gave no specific reason, so NEST offered a smaller deal.", "by": "scripted"}
         return {"verdict": "counter", "minutes": 0,
                 "reply": "Today's extra turns are used up. Want the challenge, or shall I leave you to it?",
-                "reason": "No extensions are left today, so PORTAL said so and offered the challenge again.",
+                "reason": "No extensions are left today, so NEST said so and offered the challenge again.",
                 "by": "scripted"}
     return {"verdict": "back_off", "minutes": 0, "reply": "Okay, your call. I'm here if you change your mind.",
-            "reason": "The child declined twice. PORTAL's own suggestions are never forced, so it backed off.",
+            "reason": "The child declined twice. NEST's own suggestions are never forced, so it backed off.",
             "by": "scripted"}

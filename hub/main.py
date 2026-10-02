@@ -1,4 +1,4 @@
-"""PORTAL home hub: FastAPI app, WebSocket event bus, REST endpoints, static pages.
+"""NEST home hub: FastAPI app, WebSocket event bus, REST endpoints, static pages.
 
 Run:  .venv\\Scripts\\python -m uvicorn hub.main:app --host 0.0.0.0 --port 8000
 """
@@ -104,7 +104,7 @@ async def lifespan(app: FastAPI):
     await hub.llm.close()
 
 
-app = FastAPI(title="PORTAL hub", lifespan=lifespan)
+app = FastAPI(title="NEST hub", lifespan=lifespan)
 
 
 # ------------------------------------------------------------------ event bus

@@ -1,0 +1,186 @@
+@import "tailwindcss";
+/* Display: Fraunces, a warm old-style serif with real weight. Its optical-size axis
+   sharpens the big headlines automatically. Serif companions cover the other scripts. */
+@import "@fontsource-variable/fraunces/opsz.css";
+@import "@fontsource-variable/fraunces/opsz-italic.css";
+@import "@fontsource-variable/noto-serif-devanagari/wght.css";
+@import "@fontsource/noto-serif-kr/korean-700.css";
+@import "@fontsource/noto-serif-jp/japanese-700.css";
+@import "@fontsource-variable/instrument-sans/index.css";
+
+@theme {
+  --color-ivory: #fff9f2;
+  --color-ink: #292724;
+  --color-blush: #f4dde2;
+  --color-butter: #f5e8b5;
+  --color-sage: #dde8d7;
+  --color-powder: #dceaf2;
+  --color-lavender: #e6ddf0;
+  --color-terracotta: #dca58d;
+  /* deeper companions, used only inside illustrations */
+  --color-clay: #c4826a;
+  --color-card: #d8b48f;
+  --color-moss: #a9bfa0;
+  --color-sky: #a9c6d6;
+  --color-honey: #e6cf7a;
+  --color-umber: #6b5a4e;
+
+  --font-serif: "Fraunces Variable", "Noto Serif Devanagari Variable", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Instrument Sans Variable", "Instrument Sans", system-ui, "Nirmala UI", "Malgun Gothic", "Yu Gothic UI", sans-serif;
+
+  --ease-quiet: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 460;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-butter);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---- type ---- */
+/* Interface text in each script uses that script's own system sans, named explicitly so
+   the browser never falls back to a wide, monospaced CJK face. */
+:lang(hi) { --font-sans: "Instrument Sans Variable", "Nirmala UI", "Noto Sans Devanagari", "Kohinoor Devanagari", sans-serif; }
+:lang(ko) { --font-sans: "Instrument Sans Variable", "Malgun Gothic", "Apple SD Gothic Neo", "Noto Sans KR", "Noto Sans CJK KR", sans-serif; }
+:lang(ja) { --font-sans: "Instrument Sans Variable", "Yu Gothic UI", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", "Meiryo", sans-serif; }
+[lang="hi"], [lang="ko"], [lang="ja"] { font-family: var(--font-sans); }
+
+.display {
+  font-family: var(--font-serif);
+  font-weight: 620;
+  font-optical-sizing: auto;
+  line-height: 0.96;
+  letter-spacing: -0.028em;
+}
+.display em {
+  font-weight: 560;
+  letter-spacing: -0.02em;
+}
+
+/* Each script gets its own serif, and room to breathe: Devanagari and CJK need taller
+   lines, no negative tracking, and no fake italics (emphasis becomes colour instead). */
+:lang(ko) { --font-serif: "Fraunces Variable", "Noto Serif KR", "Batang", serif; }
+:lang(ja) { --font-serif: "Fraunces Variable", "Noto Serif JP", "Yu Mincho", serif; }
+:lang(hi) .display { line-height: 1.32; letter-spacing: 0; font-weight: 640; }
+:lang(ko) .display, :lang(ja) .display { line-height: 1.24; letter-spacing: 0; font-weight: 700; }
+:lang(ko) { word-break: keep-all; }
+:lang(ja) { line-break: strict; word-break: auto-phrase; }
+:lang(hi) em, :lang(ko) em, :lang(ja) em { font-style: normal; font-weight: inherit; color: var(--color-clay); }
+:lang(hi) .label, :lang(ko) .label, :lang(ja) .label { letter-spacing: 0.08em; font-size: 0.76rem; }
+:lang(hi) .italic, :lang(ko) .italic, :lang(ja) .italic { font-style: normal; }
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.lede {
+  font-size: clamp(1.08rem, 1.3vw, 1.35rem);
+  font-weight: 480;
+  line-height: 1.5;
+  max-width: 34ch;
+}
+
+/* ---- paper ---- */
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.32;
+  mix-blend-mode: multiply;
+}
+
+.paper {
+  background: var(--color-ivory);
+  box-shadow: 0 1px 0 rgba(41, 39, 36, 0.06), 0 18px 40px -22px rgba(41, 39, 36, 0.35);
+}
+
+.rule {
+  border-top: 1px solid rgba(41, 39, 36, 0.16);
+}
+
+/* ---- buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 999px;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.94rem;
+  font-weight: 650;
+  letter-spacing: 0.005em;
+  transition: transform 0.25s var(--ease-quiet), background-color 0.25s var(--ease-quiet), color 0.25s var(--ease-quiet);
+  cursor: pointer;
+}
+.btn-ink {
+  background: var(--color-ink);
+  color: var(--color-ivory);
+}
+.btn-ink:hover {
+  transform: translateY(-1px);
+  background: #3a3733;
+}
+.btn-line {
+  box-shadow: inset 0 0 0 1.5px var(--color-ink);
+}
+.btn-line:hover {
+  background: var(--color-ink);
+  color: var(--color-ivory);
+}
+.btn-ivory {
+  background: var(--color-ivory);
+  color: var(--color-ink);
+}
+.btn-ivory:hover {
+  transform: translateY(-1px);
+}
+.link {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+  padding-bottom: 2px;
+  transition: background-size 0.3s var(--ease-quiet);
+  cursor: pointer;
+}
+.link:hover {
+  background-size: 0 1px;
+  background-position: 100% 100%;
+}
+
+/* Illustrations are drawn with slightly imperfect lines. */
+.ink {
+  stroke: var(--color-ink);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

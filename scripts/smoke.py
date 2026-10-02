@@ -62,7 +62,7 @@ async def main():
             await d.start()
         await post("/api/context", {"speed": 60})
 
-        # 1. Parent teaches a rule; PORTAL reads it back; parent confirms.
+        # 1. Parent teaches a rule; NEST reads it back; parent confirms.
         rules = (await post("/api/rules/compile", {"text": "Cartoon is fine after homework, but no shorts reels ever."})).json()
         assert len(rules) == 2, rules
         for r in rules:

@@ -6,7 +6,7 @@ Slide text is kept short enough to read from the back of a room. Speaker notes c
 
 ## Slide 1: Title
 
-**PORTAL**
+**NEST**
 Everyone else blocks the screen. We turn it into a door.
 
 *Samsung PRISM · Agentic AI · Interruptible Real-time Agents*
@@ -45,7 +45,7 @@ The problem was never the screen. It is **passive, unstructured** time on it.
 
 **Don't block the child. Recruit them.**
 
-PORTAL waits for a natural pause in the video, then the video itself dares the child to try what they just watched, in the real world.
+NEST waits for a natural pause in the video, then the video itself dares the child to try what they just watched, in the real world.
 
 Passive minute → dare → quest → their own film.
 
@@ -77,11 +77,11 @@ Every decision is logged with a reason a parent can read and a child can ask for
 
 ## Slide 7: Interruptible, both ways
 
-PORTAL interrupts the video. **The child can interrupt PORTAL.**
+NEST interrupts the video. **The child can interrupt PORTAL.**
 
 "Ten more minutes, it's almost done." → "Fair enough. Ten more minutes, then I'm back."
 
-Good arguments win. Parent rules can't be argued with. PORTAL's own suggestions always can.
+Good arguments win. Parent rules can't be argued with. NEST's own suggestions always can.
 
 > **Notes:** Barge-in stops the voice mid-sentence. The judge's verdict is clamped by code to what family rules and today's extension count allow, so the model can never be talked into more than the parents would give.
 
@@ -89,7 +89,7 @@ Good arguments win. Parent rules can't be argued with. PORTAL's own suggestions 
 
 ## Slide 8: Competitive teardown
 
-| | Family Link | Apple Screen Time | Bark | Qustodio | **PORTAL** |
+| | Family Link | Apple Screen Time | Bark | Qustodio | **NEST** |
 |---|---|---|---|---|---|
 | Core action | Limit and lock | Limit and lock | Monitor and alert | Filter and limit | **Redirect into activity** |
 | When it acts | Timer expiry | Timer expiry | After risky content | Timer or filter hit | **At a natural pause** |
@@ -98,9 +98,9 @@ Good arguments win. Parent rules can't be argued with. PORTAL's own suggestions 
 | What the parent sees | Minutes per app | Minutes per app | Alerts | Reports | **Interests, and a reason for every action** |
 | Outcome measured | Minutes reduced | Minutes reduced | Risks flagged | Minutes reduced | **Passive minutes turned active** |
 
-**They restrict. PORTAL transforms.**
+**They restrict. NEST transforms.**
 
-> **Notes:** Be fair. These are good products at what they do, and PORTAL keeps the one thing they do well: a hard parent rule is enforced. The difference is what happens the rest of the time. Only Samsung has the phone, the TV, the lights and the watch in one ecosystem; that is why this is a Samsung product and not an app.
+> **Notes:** Be fair. These are good products at what they do, and NEST keeps the one thing they do well: a hard parent rule is enforced. The difference is what happens the rest of the time. Only Samsung has the phone, the TV, the lights and the watch in one ecosystem; that is why this is a Samsung product and not an app.
 
 ---
 
@@ -108,7 +108,7 @@ Good arguments win. Parent rules can't be argued with. PORTAL's own suggestions 
 
 - **Nothing raw leaves the home.** Screen, voice and camera are processed on the family's own devices.
 - **Rules are enforced by plain code.** The AI compiles a rule once; the parent confirms the read-back.
-- **PORTAL limits itself.** Interruptions are budgeted. Rewards are capped and fade. No streaks.
+- **NEST limits itself.** Interruptions are budgeted. Rewards are capped and fade. No streaks.
 - **It gives up gracefully.** Two refusals and it backs off.
 - **Teens are never interrupted.** 13+ get a mirror they own.
 
@@ -149,6 +149,6 @@ A simulated two-week cohort shows the pipeline and the self-limiting behaviour w
 
 **The ask:** device access, a SmartThings and Samsung Kids mentor, and help running the pilot.
 
-*Everyone else blocks the screen. PORTAL turns it into a door.*
+*Everyone else blocks the screen. NEST turns it into a door.*
 
 > **Notes:** End on the tagline, exactly as on slide 1.
