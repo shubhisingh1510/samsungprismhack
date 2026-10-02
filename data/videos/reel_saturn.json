@@ -1,0 +1,23 @@
+{
+  "id": "reel_saturn",
+  "title": "Saturn's Rings Up Close",
+  "channel": "SkyLab Kids (sample reel)",
+  "source": "reel",
+  "category": "educational",
+  "topics": ["saturn", "planets", "space"],
+  "palette": ["#0b1026", "#4b2e83"],
+  "segments": [
+    {"start": 0.0, "dur": 4.0, "emoji": "🪐", "text": "Saturn is the planet with the biggest, brightest rings in our solar system."},
+    {"start": 4.2, "dur": 4.2, "emoji": "🧊", "text": "The rings look solid, but they are made of billions of pieces of ice and rock."},
+    {"start": 8.6, "dur": 4.0, "emoji": "🏠", "text": "Some pieces are as small as sand and some are as big as a house."},
+    {"start": 14.0, "dur": 4.0, "emoji": "📏", "text": "Now here is the strange part. The rings are huge but incredibly thin."},
+    {"start": 18.2, "dur": 4.4, "emoji": "📄", "text": "They stretch wider than the gap from Earth to the Moon, yet most are thinner than a building."},
+    {"start": 22.8, "dur": 4.0, "emoji": "💿", "text": "If Saturn were a football, its rings would be thinner than a sheet of paper."},
+    {"start": 28.4, "dur": 4.0, "emoji": "🔭", "text": "Next, how can you see Saturn yourself? You do not need a spaceship."},
+    {"start": 32.6, "dur": 4.2, "emoji": "🌃", "text": "On a clear night Saturn looks like a steady yellow star that does not twinkle."},
+    {"start": 37.0, "dur": 4.0, "emoji": "👀", "text": "With a small telescope you can spot the rings as tiny handles on each side."},
+    {"start": 42.6, "dur": 4.0, "emoji": "🌙", "text": "Finally, Saturn has more than a hundred moons, and one of them has lakes."},
+    {"start": 46.8, "dur": 4.2, "emoji": "🛰️", "text": "That moon is called Titan, and a flying robot is being built to explore it."},
+    {"start": 52.4, "dur": 3.8, "emoji": "✨", "text": "So next time you look up, remember the ringed giant is looking back."}
+  ]
+}

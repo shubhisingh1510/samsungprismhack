@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PORTAL · Game Forge</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="bar">
+    <a class="logo" href="/">PORTAL</a>
+    <span class="small muted">Game Forge</span>
+    <div class="chips" id="truth"></div>
+  </header>
+
+  <main class="wrap">
+    <div class="card">
+      <h2>Say a game. Play it. Change its rules.</h2>
+      <div class="row">
+        <button id="mic">🎤 Say it</button>
+        <input class="grow" type="text" id="idea" placeholder="Make me a game where a cat dodges math problems" aria-label="Your game idea">
+        <button class="primary" id="forge">Forge it</button>
+      </div>
+      <p class="small muted" id="note" style="margin-top:8px"></p>
+    </div>
+
+    <div class="grid two" id="workshop" hidden>
+      <section>
+        <iframe class="gameframe" id="frame" sandbox="allow-scripts" title="Your game"></iframe>
+        <p class="small muted">Move with the arrow keys, or drag with your finger.</p>
+      </section>
+      <section>
+        <div class="card">
+          <h2>Your game's rules</h2>
+          <div class="blocks" id="blocks"></div>
+        </div>
+        <div class="card">
+          <h2>Change a rule</h2>
+          <div class="row">
+            <button id="editMic">🎤</button>
+            <input class="grow" type="text" id="change" placeholder="make it faster · give me 5 lives · make the cat a dragon" aria-label="What to change">
+            <button class="primary" id="apply">Change it</button>
+          </div>
+          <p id="changed" style="margin-top:8px"></p>
+        </div>
+        <div class="card">
+          <div class="row">
+            <h2 class="grow" style="margin:0">The code behind the blocks</h2>
+            <button id="download">Download game</button>
+          </div>
+          <pre class="code" id="code" style="margin-top:10px"></pre>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/forge.js"></script>
+</body>
+</html>

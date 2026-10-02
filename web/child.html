@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PORTAL · Child phone</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="overlay" id="start">
+    <div>
+      <h1 class="logo">PORTAL</h1>
+      <p class="muted">Child phone</p>
+      <p><button class="primary big" id="startBtn">Tap to start</button></p>
+      <p class="small muted">Starting turns on the companion's voice and the microphone.</p>
+    </div>
+  </div>
+
+  <header class="bar">
+    <a class="logo" href="/">PORTAL</a>
+    <span class="small muted" id="hello"></span>
+    <div class="chips" id="truth"></div>
+  </header>
+
+  <main class="wrap narrow">
+    <div class="card">
+      <div class="stage" id="stage"><div class="reel"><div class="caption muted">Pick something to watch</div></div></div>
+      <div class="row" style="margin-top:10px" id="picker"></div>
+      <details class="small" style="margin-top:8px">
+        <summary class="muted">Watch a YouTube video instead</summary>
+        <div class="row" style="margin-top:8px">
+          <input class="grow" type="text" id="ytUrl" placeholder="Paste a YouTube link" aria-label="YouTube link">
+          <button id="ytAdd">Load</button>
+        </div>
+        <p class="muted" id="ytNote"></p>
+      </details>
+    </div>
+
+    <div class="card">
+      <div class="companion">
+        <div class="avatar" id="avatar">🦊</div>
+        <div class="grow">
+          <div class="bubble"><span class="who" id="who">Pixel</span><span id="line">I'm watching along with you.</span></div>
+          <div class="heard" id="heard"></div>
+        </div>
+      </div>
+      <div class="row" id="replyRow" hidden style="margin-top:10px">
+        <button class="primary" id="yesBtn">I'm in</button>
+        <button id="badBtn" title="Tell PORTAL this was a bad moment to interrupt">Bad timing</button>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <button class="mic" id="micBtn" aria-label="Talk to the companion">🎤 Talk</button>
+        <input class="grow" type="text" id="say" placeholder="or type what you'd say" aria-label="Type a reply">
+        <button id="sendBtn">Send</button>
+      </div>
+      <div class="row small" style="margin-top:8px">
+        <button class="ghost" id="whyBtn">Why did you do that?</button>
+        <label class="muted"><input type="checkbox" id="openMic"> Open mic (interrupt by just talking)</label>
+      </div>
+    </div>
+
+    <div class="card" id="blocked" hidden>
+      <h2>Pick something else</h2>
+      <div class="row" id="alternatives"></div>
+    </div>
+
+    <div class="card quest" id="quest" hidden>
+      <div class="row"><span class="label grow" id="questLabel">Quest</span><span class="timer" id="questTimer"></span></div>
+      <h2 id="questTitle"></h2>
+      <p id="questMission"></p>
+      <ol id="questSteps"></ol>
+      <div class="tags" id="questMaterials"></div>
+      <div id="questOffer" class="row" hidden>
+        <button class="primary big" id="acceptBtn">Accept the quest</button>
+      </div>
+      <div id="questProof" hidden>
+        <p class="label" style="margin-top:10px">Show me</p>
+        <div id="proofPhoto" hidden>
+          <input type="file" id="photo" accept="image/*" capture="environment" multiple hidden>
+          <button class="primary big" id="photoBtn">📸 Take a photo</button>
+        </div>
+        <div id="proofVoice" hidden>
+          <textarea id="proofText" placeholder="Tell me what you did or found out"></textarea>
+          <div class="row" style="margin-top:8px"><button id="proofMic">🎤 Say it</button><button class="primary" id="proofSend">Send</button></div>
+        </div>
+        <div id="proofSteps" hidden>
+          <button class="primary big" id="stepsBtn">⌚ Check my steps</button>
+        </div>
+        <p class="small" id="proofNote"></p>
+        <button class="ghost small" id="abandonBtn">Stop this quest</button>
+      </div>
+      <div id="questDone" hidden>
+        <p id="doneNote"></p>
+        <p><b id="doneReward"></b></p>
+        <p class="muted small">Look at the TV. Your film is starting.</p>
+      </div>
+    </div>
+
+    <p class="small muted">Want to make a game instead? <a href="/forge.html">Open the Game Forge</a></p>
+  </main>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/child.js"></script>
+</body>
+</html>

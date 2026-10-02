@@ -1,0 +1,30 @@
+{
+  "id": "reel_piston_door",
+  "title": "Secret Piston Door in 3 Minutes",
+  "channel": "BlockBuilder (sample reel)",
+  "source": "reel",
+  "category": "gaming",
+  "topics": ["redstone", "doors", "building"],
+  "palette": ["#1b2a49", "#3a7d44"],
+  "segments": [
+    {"start": 0.0, "dur": 3.6, "emoji": "👋", "text": "Hey builders, welcome back to the channel."},
+    {"start": 3.8, "dur": 4.2, "emoji": "🚪", "text": "Today we are building a secret piston door that hides inside a wall."},
+    {"start": 8.2, "dur": 4.0, "emoji": "🧱", "text": "You only need four sticky pistons, some redstone dust and two levers."},
+    {"start": 13.6, "dur": 3.8, "emoji": "📐", "text": "First, dig a hole two blocks wide and three blocks tall."},
+    {"start": 17.6, "dur": 4.2, "emoji": "🧲", "text": "Place two sticky pistons on each side, facing the middle of the doorway."},
+    {"start": 22.0, "dur": 4.0, "emoji": "🧱", "text": "Then stick a stone block onto the face of every piston."},
+    {"start": 27.6, "dur": 4.0, "emoji": "🔴", "text": "Now for the wiring. Run redstone dust behind the pistons on both sides."},
+    {"start": 31.8, "dur": 4.4, "emoji": "⚡", "text": "The dust carries the signal, so both sides open at the same moment."},
+    {"start": 36.4, "dur": 4.0, "emoji": "🕹️", "text": "Connect the two lines under the floor and bring them up to a lever."},
+    {"start": 42.0, "dur": 3.6, "emoji": "✨", "text": "Okay, flip the lever and watch the wall slide open."},
+    {"start": 45.8, "dur": 3.8, "emoji": "🚪", "text": "The pistons pull the blocks back and the doorway appears."},
+    {"start": 49.8, "dur": 3.6, "emoji": "🤫", "text": "Flip it again and the wall closes like nothing was ever there."},
+    {"start": 55.0, "dur": 4.0, "emoji": "🎨", "text": "Next, let us hide the lever so nobody can find the door."},
+    {"start": 59.2, "dur": 4.2, "emoji": "🖼️", "text": "Put a painting over the lever, or swap it for a button behind a bookshelf."},
+    {"start": 63.6, "dur": 4.0, "emoji": "📚", "text": "A bookshelf with one missing book is the classic secret switch."},
+    {"start": 69.2, "dur": 4.0, "emoji": "⏱️", "text": "Finally, add a repeater if you want the door to close by itself."},
+    {"start": 73.4, "dur": 4.2, "emoji": "🔁", "text": "The repeater delays the signal, which gives you time to walk through."},
+    {"start": 77.8, "dur": 3.8, "emoji": "🏰", "text": "And that is your secret piston door, ready for any base."},
+    {"start": 83.0, "dur": 4.0, "emoji": "👍", "text": "So if you enjoyed this build, the next video shows a hidden staircase."}
+  ]
+}

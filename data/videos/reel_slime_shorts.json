@@ -1,0 +1,18 @@
+{
+  "id": "reel_slime_shorts",
+  "title": "Satisfying Slime Shorts #47",
+  "channel": "SquishTok (sample reel)",
+  "source": "reel",
+  "category": "shorts",
+  "loop": true,
+  "topics": ["slime", "satisfying"],
+  "palette": ["#ff5f9e", "#7b2ff7"],
+  "segments": [
+    {"start": 0.0, "dur": 3.0, "emoji": "🫧", "text": "Wait for it. This slime is so crunchy."},
+    {"start": 3.2, "dur": 3.0, "emoji": "✂️", "text": "Cutting kinetic sand with a hot knife."},
+    {"start": 7.4, "dur": 3.0, "emoji": "🌈", "text": "Next one. Mixing every colour into one giant blob."},
+    {"start": 10.6, "dur": 3.0, "emoji": "💥", "text": "Squish the glitter balloon. Do not blink."},
+    {"start": 14.8, "dur": 3.0, "emoji": "🧼", "text": "Okay, soap carving, the smoothest cut ever."},
+    {"start": 18.0, "dur": 3.0, "emoji": "🔁", "text": "Swipe up for part forty eight."}
+  ]
+}

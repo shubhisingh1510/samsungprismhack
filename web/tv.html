@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PORTAL · Living room</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body { overflow: hidden; }
+    .room { position: fixed; inset: 0; display: grid; grid-template-rows: auto 1fr auto; transition: background 1.2s linear;
+      background: radial-gradient(ellipse at 50% 0%, rgb(var(--light) / var(--glow)) 0%, rgb(var(--light) / calc(var(--glow) * 0.35)) 45%, #07060f 100%); }
+    .ceiling { display: flex; justify-content: space-around; padding: 0 12%; }
+    .lamp { width: 70px; height: 26px; border-radius: 0 0 40px 40px; background: rgb(var(--light)); opacity: calc(0.25 + var(--glow));
+      box-shadow: 0 0 calc(90px * var(--glow)) calc(34px * var(--glow)) rgb(var(--light) / 0.8); transition: all 1.2s linear; }
+    .middle { display: grid; place-items: center; padding: 2vh 4vw; min-height: 0; }
+    .tv { width: min(92vw, 150vh); aspect-ratio: 16 / 9; max-height: 100%; background: #05040c; border: 10px solid #15131f;
+      border-radius: 18px; box-shadow: 0 30px 80px #000a; position: relative; overflow: hidden; }
+    .screen { position: absolute; inset: 0; display: none; place-items: center; text-align: center; padding: 4%; }
+    .screen.on { display: grid; }
+    .screen h1 { font-size: clamp(1.4rem, 4.6vw, 3.6rem); }
+    .screen p { font-size: clamp(0.95rem, 2vw, 1.6rem); }
+    #idle { color: #6f6a94; }
+    #idle .clock { font-size: clamp(2rem, 9vw, 7rem); font-weight: 200; font-variant-numeric: tabular-nums; }
+    #portal { background: #05040c; }
+    .swirl { position: absolute; width: 150%; aspect-ratio: 1; border-radius: 50%; left: -25%; top: 50%; translate: 0 -50%;
+      background: conic-gradient(from 0deg, #8b5cf6, #22d3ee, #f472b6, #fbbf24, #8b5cf6); filter: blur(46px); opacity: 0.75;
+      animation: spin 9s linear infinite; }
+    .swirl.b { width: 90%; left: 5%; animation-duration: 5s; animation-direction: reverse; opacity: 0.6; }
+    .hole { position: absolute; width: 34%; aspect-ratio: 1; border-radius: 50%; left: 33%; top: 50%; translate: 0 -50%;
+      background: radial-gradient(circle, #000 55%, transparent 72%); }
+    @keyframes spin { to { rotate: 360deg; } }
+    .front { position: relative; z-index: 2; text-shadow: 0 3px 18px #000; max-width: 80%; }
+    #quest ol { text-align: left; font-size: clamp(0.9rem, 1.9vw, 1.5rem); display: inline-block; }
+    #quest { background: linear-gradient(160deg, #241a55, #0d0b1e); }
+    #winddown { background: linear-gradient(#1a1030, #05040c); color: #c9b8ff; }
+    #film { background: #000; padding: 0; }
+    #film .photo { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s; }
+    #film .photo.show { opacity: 1; animation: kenburns 9s ease-out forwards; }
+    @keyframes kenburns { from { scale: 1; } to { scale: 1.16; translate: -2% -2%; } }
+    #film .shade { position: absolute; inset: 0; background: linear-gradient(transparent 45%, #000d); }
+    #film .caption { position: absolute; left: 5%; right: 5%; bottom: 7%; text-align: left; z-index: 2; }
+    #film .caption b { display: block; font-size: clamp(1.2rem, 3.6vw, 3rem); }
+    #film .caption span { font-size: clamp(0.85rem, 1.8vw, 1.4rem); color: #ddd; }
+    #film .card-title { position: absolute; inset: 0; display: grid; place-items: center; z-index: 3; background: #000; padding: 6%; }
+    #film .bigemoji { position: absolute; inset: 0; display: grid; place-items: center; font-size: 22vh; opacity: 0; transition: opacity 1s; }
+    #film .bigemoji.show { opacity: 1; }
+    .floor { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; padding: 10px 16px; }
+    .speaker { font-size: 0.85rem; color: var(--muted); background: #0009; padding: 6px 12px; border-radius: 999px; }
+    .speaker.playing { color: var(--good); }
+    .simpanel { background: #0d0b1ee6; border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px; font-size: 0.82rem; max-width: 430px; }
+    .simpanel input[type=range] { width: 130px; vertical-align: middle; }
+    .topbar { display: flex; align-items: center; gap: 10px; padding: 8px 14px; }
+  </style>
+</head>
+<body>
+  <div class="overlay" id="start">
+    <div>
+      <h1 class="logo">PORTAL</h1>
+      <p class="muted">Living room: TV and SmartThings view</p>
+      <p><button class="primary big" id="startBtn">Turn on the TV</button></p>
+      <p class="small muted">Put this window on the laptop or a big screen.</p>
+    </div>
+  </div>
+
+  <div class="room" id="room" style="--light: 255 244 229; --glow: 0.3">
+    <div>
+      <div class="topbar"><a class="logo" href="/">PORTAL</a><span class="small muted">Living room</span><div class="chips" id="truth"></div></div>
+      <div class="ceiling"><div class="lamp"></div><div class="lamp"></div><div class="lamp"></div></div>
+    </div>
+    <div class="middle">
+      <div class="tv">
+        <div class="screen on" id="idle"><div><div class="clock" id="clock"></div><p>Living room TV</p></div></div>
+        <div class="screen" id="portal">
+          <div class="swirl"></div><div class="swirl b"></div><div class="hole"></div>
+          <div class="front"><p id="portalHello"></p><h1 id="portalTitle"></h1><p id="portalMission"></p><p class="small">Say yes, or tap Accept on your phone.</p></div>
+        </div>
+        <div class="screen" id="quest"><div><p class="label" id="questState"></p><h1 id="questTitle"></h1><p id="questMission"></p><ol id="questSteps"></ol></div></div>
+        <div class="screen" id="winddown"><div><h1>🌙 Winding down</h1><p>The house is getting ready for sleep.</p></div></div>
+        <div class="screen" id="film">
+          <div class="bigemoji" id="filmEmoji">🎬</div>
+          <div class="photo" id="photoA"></div><div class="photo" id="photoB"></div><div class="shade"></div>
+          <div class="caption"><b id="filmCaption"></b><span id="filmNarration"></span></div>
+          <div class="card-title" id="filmCard"><div><p class="label" id="filmKicker"></p><h1 id="filmTitle"></h1></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="floor">
+      <div class="speaker" id="speaker">🔈 Speaker: silent</div>
+      <div class="simpanel">
+        <div class="label">Simulators (not real devices)</div>
+        <div class="row" style="margin-top:6px">
+          <label><input type="checkbox" id="watchOn"> Galaxy Watch paired</label>
+          <label>still for <input type="range" id="still" min="0" max="60" value="30"> <b id="stillOut">30</b> min</label>
+          <button id="walk">Walk 20 steps</button><span id="steps" class="muted">0 steps</span>
+        </div>
+        <div class="muted" style="margin-top:6px" id="lights"></div>
+        <div class="muted" id="brain"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/tv.js"></script>
+</body>
+</html>

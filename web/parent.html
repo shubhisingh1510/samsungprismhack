@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PORTAL · Parent</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="bar">
+    <a class="logo" href="/">PORTAL</a>
+    <span class="small muted">Parent</span>
+    <div class="chips" id="truth"></div>
+  </header>
+
+  <main class="wrap">
+    <div class="grid two">
+      <section>
+        <div class="card">
+          <h2>Teach a rule once</h2>
+          <p class="small muted">Say it the way you would say it at home, in any language. PORTAL reads back what it understood, asks if something is unclear, and enforces it only after you confirm.</p>
+          <textarea id="ruleText" placeholder="Cartoon is fine after homework, but no shorts reels ever."></textarea>
+          <div class="row" style="margin-top:8px">
+            <select id="lang" style="width:auto" aria-label="Speaking language">
+              <option value="en-IN">English</option><option value="hi-IN">हिन्दी</option><option value="ta-IN">தமிழ்</option>
+              <option value="bn-IN">বাংলা</option><option value="mr-IN">मराठी</option><option value="te-IN">తెలుగు</option>
+              <option value="kn-IN">ಕನ್ನಡ</option><option value="gu-IN">ગુજરાતી</option>
+            </select>
+            <button id="ruleMic">🎤 Speak</button>
+            <button class="primary" id="ruleGo">Understand this</button>
+            <span class="small muted" id="ruleNote"></span>
+          </div>
+          <div id="rules"></div>
+        </div>
+
+        <div class="card">
+          <h2>Right now</h2>
+          <div class="row">
+            <label><input type="checkbox" id="homework"> Homework is done</label>
+          </div>
+          <div class="label" style="margin-top:12px">Drift (how passive this sitting has become)</div>
+          <div class="gauge" style="margin:6px 0"><i id="driftBar"></i><b id="driftMark"></b></div>
+          <div class="kv" id="brain"></div>
+        </div>
+
+        <div class="card">
+          <h2>Demo controls</h2>
+          <p class="small muted">These exist so a 45-minute story fits in a 3-minute demo. They are not product features.</p>
+          <div class="row">
+            <label>Clock speed
+              <select id="speed" style="width:auto">
+                <option value="1">x1 (real time)</option><option value="30">x30</option><option value="60">x60</option><option value="120">x120</option>
+              </select>
+            </label>
+            <button id="jump" title="Adds 10 minutes of passive viewing to this sitting">+10 min watched</button>
+            <label>Pretend it is <input type="time" id="pretend" style="width:auto"></label>
+            <button id="pretendClear" class="ghost">Use real time</button>
+          </div>
+          <div class="row" style="margin-top:8px">
+            <label>Child <input type="text" id="childName" style="width:120px"></label>
+            <label>Age <input type="number" id="childAge" min="4" max="17" style="width:70px"></label>
+            <button id="saveChild">Save</button>
+            <button id="probe" class="ghost">Look for local AI model</button>
+            <button id="reset" class="danger">Reset everything</button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="card">
+          <h2>Today</h2>
+          <div class="tiles" id="tiles"></div>
+          <p class="small muted" style="margin-top:8px" id="latency"></p>
+        </div>
+
+        <div class="card">
+          <h2 id="genomeTitle">Interest map</h2>
+          <p class="small muted">Interests built from what was watched and what was done. Green ring: acted on in the real world.</p>
+          <div class="bubbles" id="genome"></div>
+        </div>
+
+        <div class="card">
+          <h2>Every decision, with its reason</h2>
+          <div class="log" id="log"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/parent.js"></script>
+</body>
+</html>
